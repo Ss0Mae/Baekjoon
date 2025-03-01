@@ -3,13 +3,13 @@ def solution(arr):
     n = 1                           
     
     while True:
-        answer = max(arr) * n       # 가장 큰 수의 배수 기준으로 최소공배수를 구함.
-        result = True               # if result=True: 최소공배수    else: 최소공배수가 아님
+        answer = max(arr) * n      
+        result = True               
         for num in arr:
             if answer % num != 0:   
-                result = False      # answer가 나누어 떨어지지 않으면 result=False로 변경 후 break
+                result = False      
                 break
-        if result:                  # result 판별 True이면 while True문을 빠져나옴
+        if result:                 
             break                   
         n += 1
         
