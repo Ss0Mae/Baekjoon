@@ -1,15 +1,13 @@
+from collections import Counter
+
 def solution(k, tangerine):
     answer = 0
-    d = {}
-    for i in tangerine:
-        if i in d:
-            d[i] += 1
-        else:
-            d[i] = 1
-    d = sorted(d.items(), key = lambda x: x[1], reverse = True )
-    for i in d:
-        k -= i[1]
-        answer+=1
-        if (k<=0):
+    # 귤 크기별 빈도 계산 후, 빈도가 높은 순으로 정렬
+    sorted_counts = sorted(Counter(tangerine).values(), reverse=True)
+    
+    for count in sorted_counts:
+        k -= count
+        answer += 1
+        if k <= 0:
             break
     return answer
