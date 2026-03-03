@@ -1,0 +1,26 @@
+-- 코드를 작성해주세요
+WITH RECURSIVE GenerationTree AS(
+
+    SELECT
+        ID,
+        PARENT_ID,
+        1 AS GENERATION
+    FROM ECOLI_DATA
+    WHERE PARENT_ID IS NULL
+    
+    UNION ALL
+    
+    SELECT
+        E.ID,
+        E.PARENT_ID,
+        G.GENERATION + 1
+    FROM ECOLI_DATA E
+    JOIN GenerationTree G ON E.PARENT_ID = G.ID
+)
+
+SELECT COUNT(G.ID) AS COUNT, G.GENERATION
+FROM GenerationTree G
+LEFT JOIN ECOLI_DATA Child ON G.ID = Child.PARENT_ID
+WHERE Child.ID IS NULL
+GROUP BY G.GENERATION
+ORDER BY G.GENERATION ASC
