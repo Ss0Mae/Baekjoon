@@ -1,10 +1,10 @@
 # [level 1] 가운데 글자 가져오기 - 12903 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12903) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12903?language=java) 
 
 ### 성능 요약
 
-메모리: 10 MB, 시간: 0.01 ms
+메모리: 87.5 MB, 시간: 0.04 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 07월 19일 17:13:28
+2026년 07월 13일 09:53:37
 
 ### 문제 설명
 
